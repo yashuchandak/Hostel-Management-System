@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS</title>
+</head>
+
+<body>
+  <div style="vertical-align:top; width: 60pt; display: inline-block; margin-top: 25pt;">
+    <button style="width: 60pt; background-color: #df9843;" class="btn pb-5 pt-5 mt-3"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"  aria-controls="offcanvasRight"><strong style="font-size:large;">SLASH</strong></button>
+    <button style="width: 60pt; background-color: #df9843;" class="btn pb-5 pt-5 mt-3"  type="button" onclick="window.location.href='/mainpg'"><strong style="font-size:large;">HOME</strong></button>
+  </div>
+
+<!-- <form> -->
+  <div style="display: inline-block; background-color:rgb(145 165 182);" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasRightLabel">HMS</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <form method="POST" action="">
+        <div class="mb-3 col">
+          <strong>NOTES</strong>
+          <textarea rows="10" name="notu" class="form-control mt-2">{{dat}}</textarea>
+      <!-- <textarea rows="4" cols="40" name="notu" ></textarea> -->
+        </div>
+        <button type="submit" style="background-color: #cd33008c;" class="btn"><strong>save</strong></button>
+      </form>  
+    </div>
+  </div>
+{% block extslash %}
+    
+{% endblock extslash %}
+</body>
+</html>
