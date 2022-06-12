@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leave</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='common.css')}}">
+</head>
+
+<body>
+    {% extends 'mainpage.html' %}
+
+    {% block extmainpg %}
+        <div class="block2">
+            <div id="leave" class="blockele">
+                <h5>Leave Section</h5>
+                <form method="POST">
+                    <div class="col">
+                        <label for="validationCustom01" class="form-label">Roll no.</label>
+                        <input autofocus type="text" class="form-control" name="roll" id="validationCustom01"
+                            required>
+                    </div>
+                    <div class="col" style="margin-top:4px">
+                        <label for="validationCustom03" class="form-label">Return Date</label>
+                        <input type="date" class="form-control" name="rtdt" id="validationCustom03" required>
+                    </div>
+                    <div class="col" style="margin-top:4px">
+                        <label for="validationCustom04" class="form-label">No. of Nights</label>
+                        <input type="text" class="form-control" name="nights" required>
+                    </div>
+                    <div class="col" style="margin-top:4px">
+                        <label for="validationCustom02" class="form-label">Where</label>
+                        <input type="text" class="form-control" name="where" id="validationCustom02" required>
+                    </div>
+                    <div class="col" style="margin-top:4px">
+                        <label for="validationCustomUsername" class="form-label">Why</label>
+                        <input type="text" class="form-control" id="validationCustom03" name="why" required>
+                    </div>
+                    <div style="margin-top:10px">
+                        <button class="btn btn-primary" type="submit">Apply For Leave</button>
+                    </div>
+                </form>
+                <hr>
+                <h5 style="margin-top:10px">Return</h5>
+                <form method="POST" >
+                    <label for="validationCustom01" class="form-label">Roll no.</label>
+                    <input type="text" class="form-control" name="rtroll" value="{{ request.form['rtroll'] }}"
+                        id="validationCustom01" required>
+                    <button class="btn btn-primary" style="display: inline-block;margin-top: 10px;"
+                        type="submit">Check</button>
+                    <div>the return date was
+                        <strong>{{retdate}}</strong>
+                    </div>
+                    <div style="margin-top:2vh;">
+                        <form action="" method="post" style="margin-right:6px ;">
+                            <div style="display: inline-block;">
+                                <input type="checkbox" class="btn-check" value="1" name="ap" id="btncheck1"
+                                    autocomplete="off">
+                                <label class="btn btn-outline-primary" style="color: black; font-weight: 500;"
+                                    for="btncheck1">alert parent</label>
+                            </div>
+                        <div style="display: inline-block;">
+                            <button class="btn btn-primary " type="submit" name="finpro">change status</button>
+                        </form>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock extmainpg %}
+</body>
+
+</html>
